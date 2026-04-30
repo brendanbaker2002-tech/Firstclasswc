@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Class Window Cleaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #475569;
+            overflow-x: hidden;
+        }
+        .text-brand-slate-900 { color: #0f172a; }
+        .bg-brand-blue { background-color: #2563eb; }
+        .text-brand-blue { color: #2563eb; }
+        .ring-brand-blue { --tw-ring-color: #2563eb; }
+        
+        @keyframes plane-fade-in {
+            from { transform: translateX(-100px) rotate(-5deg); opacity: 0; }
+            to { transform: translateX(0) rotate(-15deg); opacity: 0.03; }
+        }
+        .plane-bg {
+            animation: plane-fade-in 2s ease-out forwards;
+        }
+        .btn-hover:active { transform: scale(0.98); }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center">
+        <div class="w-full max-w-7xl mx-auto flex flex-col min-h-screen">
+            <!-- Header -->
+            <header class="w-full px-6 md:px-12 py-8 flex justify-between items-center relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center shadow-lg shadow-blue-600/20">
+                        <i data-lucide="layout-grid" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <span class="text-2xl font-black tracking-tighter text-brand-slate-900 uppercase">First Class</span>
+                </div>
+                <div class="hidden md:block text-slate-500 font-semibold text-sm">
+                    Call us: <span class="text-brand-slate-900">(316) 655-7452</span>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="flex-1 px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-center py-12 relative">
+                <!-- Airplane Background -->
+                <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden flex items-center justify-center md:justify-start">
+                    <div class="plane-bg absolute -top-10 -left-20 md:left-20 opacity-0">
+                        <i data-lucide="plane" class="w-[40rem] h-[40rem] text-brand-blue"></i>
+                    </div>
+                </div>
+
+                <!-- Left Side: Copy -->
+                <div class="md:col-span-7 space-y-10 relative z-10">
+                    <div>
+                        <h1 class="text-5xl md:text-7xl font-black text-brand-slate-900 leading-[1.1] mb-6">
+                            First Class <br/>
+                            <span class="text-brand-blue">Window Cleaning</span>
+                        </h1>
+                        <p class="text-xl text-slate-600 leading-relaxed max-w-xl">
+                            Professional, streak-free results every time. We bring clarity to your views and brightness to your home.
+                        </p>
+                    </div>
+
+                    <!-- Services Inline Section -->
+                    <div class="bg-white/40 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 inline-block w-full max-w-2xl">
+                        <h2 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Our Core Services</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-blue"></i>
+                                <span class="text-slate-700 font-bold text-sm tracking-tight">Window Cleaning</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-blue"></i>
+                                <span class="text-slate-700 font-bold text-sm tracking-tight">Frame Cleaning</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-blue"></i>
+                                <span class="text-slate-700 font-bold text-sm tracking-tight">Track & Sill Cleaning</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-blue"></i>
+                                <span class="text-slate-700 font-bold text-sm tracking-tight">Gutter Cleaning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div class="md:col-span-5 relative z-10">
+                    <div id="form-container" class="bg-white p-10 rounded-[2.5rem] shadow-[0_35px_60px_-15px_rgba(37,99,235,0.1)] border border-slate-100 relative">
+                        <div class="absolute -top-3 -left-3 bg-brand-blue text-white text-[10px] font-black px-4 py-1.5 rounded-full tracking-widest uppercase shadow-lg">
+                            GET A QUOTE
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-brand-slate-900 mb-8">Free Estimate</h3>
+                        
+                        <form id="quote-form" class="space-y-5">
+                            <div>
+                                <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Full Name</label>
+                                <div class="relative">
+                                    <i data-lucide="user" class="absolute left-4 top-3.5 w-4 h-4 text-slate-300"></i>
+                                    <input required type="text" id="name" placeholder="John Doe" class="w-full pl-11 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-brand-blue transition-all font-medium placeholder:text-slate-300">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Phone Number</label>
+                                <div class="relative">
+                                    <i data-lucide="phone" class="absolute left-4 top-3.5 w-4 h-4 text-slate-300"></i>
+                                    <input required type="tel" id="phone" placeholder="(316) 655-7452" class="w-full pl-11 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-brand-blue transition-all font-medium placeholder:text-slate-300">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white font-black py-5 rounded-2xl shadow-xl shadow-blue-600/30 transform transition-all btn-hover mt-4">
+                                Submit Request
+                            </button>
+                            
+                            <p class="text-center text-[10px] text-slate-400 font-bold uppercase tracking-tighter mt-6">
+                                No obligation. Fully insured services.
+                            </p>
+                        </form>
+
+                        <div id="success-msg" class="hidden py-12 flex flex-col items-center text-center gap-4">
+                            <div class="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-2">
+                                <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Request Sent!</h3>
+                            <p id="success-text" class="text-slate-500 text-sm">We'll contact you shortly.</p>
+                            <button id="reset-btn" class="mt-6 text-brand-blue font-bold text-xs uppercase tracking-widest hover:underline">
+                                Send New Request
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="w-full px-6 md:px-12 py-10 bg-white border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-400 text-sm font-medium italic">
+                    Serving the local community with pride.
+                </p>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                        <span class="text-[10px] font-black text-slate-900/40 uppercase tracking-widest">5-STAR RATED</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+                        <span class="text-[10px] font-black text-slate-900/40 uppercase tracking-widest">ECO-FRIENDLY</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Form Logic
+        const form = document.getElementById('quote-form');
+        const container = document.getElementById('form-container');
+        const successMsg = document.getElementById('success-msg');
+        const successText = document.getElementById('success-text');
+        const resetBtn = document.getElementById('reset-btn');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            successText.innerText = `Thank you, ${name}! We'll contact you at ${phone} shortly.`;
+            form.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+        });
+
+        resetBtn.addEventListener('click', () => {
+            form.reset();
+            form.classList.remove('hidden');
+            successMsg.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
+
